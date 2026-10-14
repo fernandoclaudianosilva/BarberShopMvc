@@ -1,6 +1,7 @@
 using System.Diagnostics;
-using BarberShopMvc.Models;
+using BarberShopMvc.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BarberShopMvc.Controllers
 {

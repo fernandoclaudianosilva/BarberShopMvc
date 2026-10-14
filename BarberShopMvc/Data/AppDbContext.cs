@@ -9,8 +9,8 @@ namespace BarberShopMvc.Data
         {
         }
 
-        DbSet<Agendamento> Agendamentos { get; set; }
-        DbSet<Servico> Servicos { get; set; }
-        DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Agendamento> Agendamentos { get; set; }
+        public DbSet<Servico> Servicos { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }

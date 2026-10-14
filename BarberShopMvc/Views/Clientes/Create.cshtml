@@ -1,0 +1,40 @@
+﻿@model BarberShopMvc.Models.Cliente
+
+
+@{
+    ViewData["Title"] = "Novo Cliente";
+
+}
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="md-6">
+           <form asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NumeroTelefone" class="control-label"></label>
+                <input asp-for="NumeroTelefone" class="form-control" />
+                <span asp-validation-for="NumeroTelefone" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+            </div>
+
+
+
+           </form>
+
+
+
+    </div>
+
+
+
+
+</div>

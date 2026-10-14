@@ -1,0 +1,42 @@
+﻿@model BarberShopMvc.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar Cliente";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" asp-route-id="@Model.Id">
+            <!-- CAMPO ESCONDIDO (Essencial): Guarda o Id para sabermos qual registo estamos a atualizar -->
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <!-- O asp-for="Name" lê o valor atual do cliente.Name e preenche o input automaticamente -->
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NumeroTelefone" class="control-label"></label>
+                <!-- O asp-for="NumeroTelefone" faz o mesmo para o telefone -->
+                <input asp-for="NumeroTelefone" class="form-control" />
+                <span asp-validation-for="NumeroTelefone" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

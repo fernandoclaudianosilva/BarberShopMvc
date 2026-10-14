@@ -1,0 +1,47 @@
+﻿@model BarberShopMvc.Models.ViewModels.AgendamentoFormViewModel
+
+@{
+    ViewData["Title"] = "Criar Agendamento";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Agendamento.DataHora" class="control-label"></label>
+                <input asp-for="Agendamento.DataHora" class="form-control" />
+                <span asp-validation-for="Agendamento.DataHora" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Agendamento.ClienteId" class="control-label">Cliente</label>
+                <select asp-for="Agendamento.ClienteId" class="form-control" asp-items="@(new SelectList(Model.Clientes, "Id", "Name"))">
+                    <option value="">Selecione o Cliente</option>
+                </select>
+                <span asp-validation-for="Agendamento.ClienteId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Agendamento.ServicoId" class="control-label">Serviço</label>
+                <select asp-for="Agendamento.ServicoId" class="form-control" asp-items="@(new SelectList(Model.Servicos, "Id", "Name"))">
+                    <option value="">Selecione o Serviço</option>
+                </select>
+                <span asp-validation-for="Agendamento.ServicoId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Criar</button>
+                <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

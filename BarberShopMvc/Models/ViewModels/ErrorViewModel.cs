@@ -1,4 +1,4 @@
-namespace BarberShopMvc.Models
+namespace BarberShopMvc.Models.ViewModels
 {
     public class ErrorViewModel
     {
